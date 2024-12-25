@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="/water.css" />
+    <script src="/header.js" defer="true"></script>
+    <script src="/index.js" type="module"></script>
+    <style>
+      body {
+        margin: 0px;
+      }
+
+      #chambers {
+        --num-columns: 1;
+        display: grid;
+        grid-template-columns: repeat(var(--num-columns), 1fr);
+        width: min-content;
+      }
+
+      #admin_options {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a href="/login_redirect">Log in with twitch</a>
+    </div>
+    <div id="username"></div>
+    <div id="admin_options">
+      <button id="reset">Reset</button>
+      <div>
+        <label for="chambers_per_row">Chambers per row</label>
+        <input id="chambers_per_row" type="number" />
+        <label for="num_balls">Num balls</label>
+        <input id="num_balls" type="number" />
+      </div>
+    </div>
+    <label for="filter">Chamber filters</label>
+    <input id="filter" value="brightness(95%) sepia(50%)" />
+    <div id="chambers"></div>
+    <canvas id="large_canvas"></canvas>
+  </body>
+</html>

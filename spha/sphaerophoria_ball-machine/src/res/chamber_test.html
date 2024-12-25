@@ -1,0 +1,21 @@
+<!doctype html>
+<head>
+  <link rel="stylesheet" href="/water.css" />
+  <script src="header.js" defer="true"></script>
+  <script src="chamber_test.js" type="module"></script>
+</head>
+<body>
+  <label for="wasm_input">Select a wasm module</label>
+  <input type="file" id="wasm_input" />
+  <div id="demo">Pick a wasm module to test</div>
+  <button id="reset">Reset</button>
+  <div>
+    <label for="num_balls">Num balls</label>
+    <input id="num_balls" type="number" />
+  </div>
+  <div>
+    <label for="save_load">Test save/load logic</label>
+    <input id="save_load" type="checkbox" />
+  </div>
+  <input type="range" min="0" max="100" value="100" class="slider" id="speed" />
+</body>

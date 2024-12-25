@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="index.js"></script>
+    <style>
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+      body {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+
+      #overlay {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 350px;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 5px;
+        color: white;
+      }
+      .way_tag {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+      }
+
+      .monitored_attribute {
+        display: grid;
+        grid-template-columns: 1fr min-content min-content min-content;
+      }
+
+      .monitored_attribute input[type="number"] {
+        width: 7ch;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div id="overlay">
+      <div id="tags"></div>
+      <div id="node_id"></div>
+      <input type="checkbox" id="debug_way_finding" />
+      <label for="debug_way_finding">Debug way finding</label>
+      <br />
+      <input type="checkbox" id="debug_point_neighbors" />
+      <label for="debug_point_neighbors">Debug point neighbors</label>
+      <br />
+      <input type="checkbox" id="debug_path" />
+      <label for="debug_path">Debug path planning</label>
+      <br />
+      <input type="checkbox" id="debug_parenting" />
+      <label for="debug_parenting">Debug parenting</label>
+      <br />
+      <input type="checkbox" id="enable_transit_integration" />
+      <label for="enable_transit_integration">Enable transit integration</label>
+      <div id="monitored"></div>
+      <input type="number" id="movement_speed" value="1.0" />
+      <label for="movement_speed">Movement speed</label>
+      <input type="number" id="start_time" value="0" />
+      <label for="start_time">Path start time</label>
+      <input type="number" id="turning_cost" value="0" />
+      <label for="turning_cost">Turning cost</label>
+      <br />
+      <button id="start_path">Set path start</button>
+      <button id="end_path">Set path end</button>
+      <input type="number" id="num_steps" value="1" />
+      <label for="num_steps">Number of steps</label>
+      <button id="step_path">Step path</button>
+    </div>
+  </body>
+</html>
